@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CardsServiceService } from 'src/app/services/cards.service.service';
+import { CardData } from './interface/card.data';
 
 @Component({
   selector: 'app-cards',
@@ -7,7 +8,7 @@ import { CardsServiceService } from 'src/app/services/cards.service.service';
   styleUrls: ['./cards.component.scss']
 })
 export class CardsComponent implements OnInit {
-  cards: { title: string, icon: string, number: string, name: string }[] = [];
+  cards: CardData[] = [];
 
   constructor(private cardsServiceService: CardsServiceService) {}
 
@@ -19,9 +20,6 @@ export class CardsComponent implements OnInit {
     this.cardsServiceService.getCardsData().subscribe({
       next: (data) => {
         this.cards = data;
-      },
-      error: (error) => {
-        console.error('Error al obtener los datos de las tarjetas:', error);
       }
     });
   }

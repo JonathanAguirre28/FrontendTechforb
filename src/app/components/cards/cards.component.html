@@ -1,11 +1,12 @@
 <section class="cards">
-    <div  *ngFor="let item of cards" class="cards__content">
+    <div *ngFor="let item of cards" class="cards__content">
         <div class="cards__content-text">
-            <p class="cards__content-text-title">{{item.title}}</p>
-            <p class="cards__content-text-number">{{item.number}}</p>    
+            <p class="cards__content-text-title">{{item.name}}</p>
+            <p class="cards__content-text-number">{{item.quantity}}</p>    
         </div>
         <div class="cards__content-icon">
-            <img src="assets/icons/{{item.icon}}" alt="{{item.name}}" class="cards__content-icon-img">
+            <img src="assets/icons/{{item.status}}.png" alt="{{item.name}}" class="cards__content-icon-img">
         </div>
     </div>
 </section>
+
