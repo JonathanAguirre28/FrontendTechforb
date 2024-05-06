@@ -1,0 +1,11 @@
+@import "src/variables.scss";
+.app {
+    height: 100vh;
+    background-color: $color-primary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__table {
+        margin: 10px;
+    }
+}

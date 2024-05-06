@@ -1,1 +1,10 @@
-<p>sidenav works!</p>
+<mat-drawer-container class="sidenav" autosize>
+    <mat-drawer class="sidenav__matDrawer" mode="side" opened="true">
+        <div *ngFor="let icon of icons" class="sidenav__matDrawer-icons">
+            <img src="assets/icons/{{icon.icon}}" alt="{{icon.name}}" class="sidenav__matDrawer-icons-container">
+        </div>
+    </mat-drawer>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</mat-drawer-container>

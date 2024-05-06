@@ -1,1 +1,11 @@
-<p>header works!</p>
+<section class="header">
+    <div class="header__title">
+        <h2 class="header__title-text">Monitoreo global</h2>
+    </div>
+    <div class="header__icon">
+        <div *ngFor="let item of icons" class="header__icon-content">
+            <img src="assets/icons/{{item.icon}}" alt="{{item.name}}" class="header__icon-content-img">
+        </div>
+        <p class="header__icon-text">Juan Rojas</p>
+    </div>
+</section>

@@ -1,0 +1,33 @@
+@import "src/variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+.header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 15px;
+    width: 1350px;
+    &-title {
+        &-text {
+        font-family: 'Inter', sans-serif;
+        font-size: 30px;
+        }
+    }
+    &__icon {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        &-content {
+            display: flex;
+            align-items: center;
+            &-img {
+                cursor: pointer;
+
+            }
+        }
+        &-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+}
