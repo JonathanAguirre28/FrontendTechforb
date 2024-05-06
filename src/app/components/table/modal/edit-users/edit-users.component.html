@@ -1,1 +1,42 @@
-<p>edit-users works!</p>
+<section class="edit">
+    <div class="edit__content">
+      <div class="edit__content-title">
+        <h3 class="edit__content-title-text">Editar planta</h3>
+        <p class="edit__content-title-icon" (click)="closeModal()">X</p>
+      </div>
+
+      <form [formGroup]="form" class="edit__content-form">
+
+        <mat-form-field class="edit__content-form-center">
+          <input formControlName="name" matInput type="text" name="nombre" placeholder="Nombre planta" autocomplete="off"
+            class="">
+        </mat-form-field>
+
+        <mat-form-field class="edit__content-form-center">
+          <input formControlName="country" matInput type="text" name="country" placeholder="País" autocomplete="off" >
+        </mat-form-field>
+
+        <mat-form-field class="edit__content-form-center">
+          <input formControlName="readings" matInput type="number" name="cantidadDeLecturas" placeholder="cantidad de lecturas" autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field class="edit__content-form-center">
+          <input formControlName="readings" matInput type="number" name="cantidadDeLecturas" placeholder="cantidad de lecturas" autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field class="edit__content-form-center">
+          <input formControlName="mediumAlerts" matInput type="number" name="alertasMedias" placeholder="alertas medias" autocomplete="off">
+        </mat-form-field>
+
+        <mat-form-field class="edit__content-form-center">
+          <input formControlName="redAlerts" matInput type="number" name="alertasRojas" placeholder="alertas rojas" autocomplete="off">
+        </mat-form-field>
+
+        <div class="edit__content-form-button">
+          <button class="edit__content-form-button-cancel" (click)="closeModal()">Cancelar</button>
+          <button class="edit__content-form-button-add" (click)="editarUsuario()">Editar</button>
+        </div>
+      </form>  
+  
+    </div>
+  </section>

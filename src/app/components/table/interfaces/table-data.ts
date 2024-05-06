@@ -1,10 +1,10 @@
 export interface TableData {
-    id: number;
+    id?: number;
     icon: string;
-    pais: string;
+    country: string;
     name: string;
-    lecturas: string;
-    alertasMedias: string;
-    alertasRojas: string;
-    acciones: string;
+    readings: number;
+    mediumAlerts: number;
+    redAlerts: number;
+    iconActions?: string;
 }

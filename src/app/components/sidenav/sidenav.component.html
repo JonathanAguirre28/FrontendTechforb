@@ -1,6 +1,6 @@
 <mat-drawer-container class="sidenav" autosize>
     <mat-drawer class="sidenav__matDrawer" mode="side" opened="true">
-        <div *ngFor="let icon of icons" class="sidenav__matDrawer-icons">
+        <div *ngFor="let icon of icons; let i = index" class="sidenav__matDrawer-icons"  (click)="onIconClick(icon, i)">
             <img src="assets/icons/{{icon.icon}}" alt="{{icon.name}}" class="sidenav__matDrawer-icons-container">
         </div>
     </mat-drawer>

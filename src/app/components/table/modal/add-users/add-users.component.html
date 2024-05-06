@@ -1,1 +1,29 @@
-<p>add-users works!</p>
+<section class="modal">
+  <div class="modal__content">
+    <div class="modal__content-title">
+      <h3 class="modal__content-title-text">crear nueva planta</h3>
+      <p class="modal__content-title-icon" (click)="closeModal()">X</p>
+    </div>
+
+    <form [formGroup]="form" class="modal__content-form">
+      <mat-form-field class="modal__content-form-center">
+        <input formControlName="name" matInput type="text" name="nombre" placeholder="Nombre planta" autocomplete="off"
+          class="modal__content-form-center-input">
+      </mat-form-field>
+
+      <mat-form-field matInput class="modal__content-form-title">
+        <mat-select formControlName="pais" class="modal__content-form-title-pais" placeholder="Pais">
+          <mat-option *ngFor="let item of paises" [value]=" item"
+            class="modal__content-form-title-filter">{{  item }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <div class="modal__content-button">
+        <button class="modal__content-button-cancel" (click)="closeModal()">Cancelar</button>
+        <button class="modal__content-button-add" type="submit" [disabled]="form.invalid" (click)="createUser()">Crear</button>
+      </div>
+    </form>
+
+  </div>
+</section>

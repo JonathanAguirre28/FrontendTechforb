@@ -1,1 +1,56 @@
-<p>table works!</p>
+<section class="table">
+    <div class="table__header">
+        <h2 class="table__header-title">Plantas</h2>
+        <button  mat-stroked-button class="table__header-button" (click)="openAddUsers()">+ Crear nueva planta</button>
+    </div>
+    <div class="table__body">
+        <table mat-table [dataSource]="dataSource" class="table__body-matTable">
+            <ng-container matColumnDef="pais" class="table__body-container">
+              <th *matHeaderCellDef class="table__body-container-title-pais"> Pais </th>
+              <td *matCellDef="let element" class="table__body-container-position-icon"> 
+                <img src="assets/icons/{{element.icon}}.png" alt="{{element.country}}" class="table__body-container-position-img">
+                {{element.country}}
+              </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="name">
+              <th *matHeaderCellDef class="table__body-container-title"> Nombre de la planta </th>
+              <td *matCellDef="let element" class="table__body-container-position"> {{element.name}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="lecturas">
+              <th *matHeaderCellDef class="table__body-container-title"> Lecturas </th>
+              <td *matCellDef="let element" class="table__body-container-position"> {{element.readings}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="alertasMedias">
+              <th *matHeaderCellDef class="table__body-container-title"> Alertas medias </th>
+              <td *matCellDef="let element" class="table__body-container-position"> {{element.mediumAlerts}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="alertasRojas">
+              <th *matHeaderCellDef class="table__body-container-title"> Alertas rojas </th>
+              <td *matCellDef="let element" class="table__body-container-position"> {{element.redAlerts}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="acciones" class="table__body-container">
+              <th *matHeaderCellDef class="table__body-container-title"> Acciones </th>
+              <td *matCellDef="let element ; let i = index" class="table__body-container-position">               
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                  <img src="assets/icons/acciones.png" alt="button actions" class="table__body-container-position-img">
+                </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="OpenEditUsuers(element)">Editar</button>
+                <button mat-menu-item (click)="deleteUsers(element.id)">Eliminar</button>
+              </mat-menu>
+            </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns" class="table__body-matTable-columns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns" class="table__body-matTable-columns-center"></tr>
+          </table>
+          
+    </div>
+
+</section>
+

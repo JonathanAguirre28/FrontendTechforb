@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { SidenavService } from 'src/app/services/sidenav.service';
 
 @Component({
@@ -8,7 +9,8 @@ import { SidenavService } from 'src/app/services/sidenav.service';
 })
 export class SidenavComponent {
   icons!: {name: string, icon: string}[]
-  constructor(private sidenavService: SidenavService) {
+  constructor(private sidenavService: SidenavService, private router: Router
+  ) {
     
   }
   ngOnInit(): void {
@@ -18,5 +20,9 @@ export class SidenavComponent {
       }
     })
   }
-
+  onIconClick(icon: { name: string, icon: string }, index: number): void {
+    if (index === this.icons.length - 1) { 
+      this.router.navigate(['/login']);
+    }
+  }
 }
