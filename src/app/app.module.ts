@@ -9,6 +9,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { TableComponent } from './components/table/table.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { LoginComponent } from './views/login/login.component';
+import { RegisterComponent } from './views/register/register.component';
+import { AddUsersComponent } from './components/table/modal/add-users/add-users.component';
+import { EditUsersComponent } from './components/table/modal/edit-users/edit-users.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,12 +23,18 @@ import { TableComponent } from './components/table/table.component';
     FooterComponent,
     HeaderComponent,
     SidenavComponent,
-    TableComponent
+    TableComponent,
+    DashboardComponent,
+    LoginComponent,
+    RegisterComponent,
+    AddUsersComponent,
+    EditUsersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,168 @@
+@import "src/variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+.login {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: $color-login;
+    &__left {
+        width: 65%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        align-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        &-title {
+            color: $color-primary;
+            font-size: 36px;
+            font-weight: 500;
+        }
+        &-text {
+            color: $color-primary;
+            width: 400px;
+            line-height: 25px;
+            &-subContent {
+                font-size: 12px;
+                color: $color-primary;
+            }
+            &-content {
+                font-size: 14px;
+                color: $color-primary;
+            }
+        }
+        &-icon {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            &-img {
+            width: 24px;
+            height: 24px;
+            }
+            &-text {
+                &-content {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+    &__right {
+        background-color: $color-primary;
+        width: 45%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 30px 0 0 30px;
+        flex-wrap: wrap;
+        align-content: center;
+        align-items: flex-start;
+        gap: 60px;
+        &spinner {
+            margin: 0 auto;
+        }
+        &-content {
+            display: flex;
+            flex-direction: column;
+            width: 457px;
+            align-items: stretch;
+            justify-content: center;
+            align-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        &-title {
+            font-size: 36px;
+            font-weight: 500;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+        }
+        &-subtitle {
+            font-size: 25px;
+            font-weight: 600;
+        }
+        &-form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            width: 415px;
+            &-matFormField {
+                border-bottom: none !important;
+                width: 393px;
+                &-visibility {
+                    
+                }
+                &-matLabel {
+                    &-input {              
+                    }
+                    &-error {
+                        color: red; 
+                        padding-left: 10px;
+                        font-size: 12px;                   
+                    }
+                }
+            }
+            &-button {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                &-text {
+                    font-size: 14px;
+                    cursor: pointer;
+                }
+                &-star {
+                    background-color: $color-button-login;
+                    width: 164px;
+                    height: 48px;
+                    color: $color-primary;
+                    border: none;
+                    font-size: 14px;
+                    font-weight: 400;
+                    border-radius: 15px;
+                    cursor: pointer;
+                }
+            }
+        }
+        &-footer {
+            padding: 20px;
+            &-text {
+                font-size: 14px;
+                text-align:left;
+                color: $color-texto;
+                &-color {
+                    color: $color-login;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+.login__left-icon-text-subContent {
+  color: $color-primary;
+  font-size: 12px;
+}
+
+
+
+  .mdc-text-field--filled {
+    border-radius: 20px !important;
+    border: 1px solid #DCDBDD!important;
+    background-color: $color-primary !important;
+  }
+
+  @media (max-width: 720px) {
+    .login {
+      &__left {
+        display: none;
+      }
+  
+      &__right {
+        width: 100%;
+      }
+    }
+  }
+  
+

@@ -1,0 +1,64 @@
+<section class="login">
+
+  <div class="login__left">
+    <h1 class="login__left-title">Iniciar sesión</h1>
+    <p class="login__left-text">Nos alegra tenerte de vuelta y estamos listos para atender tus necesidades, inicia
+      sesión y continúa
+      aprobechando al máximo nuestra plataforma.</p>
+
+    <div class="login__left-icon">
+      <img src="assets/icons/Shape.png" alt="" class="login__left-icon-img">
+      <div class="login__left-icon-text">
+        <p class="login__left-icon-text-content">Monitoreo integral</p>
+        <p class="login__left-icon-text-subContent">Administra, monitoria multiples plantas de fo</p>
+      </div>
+    </div>
+
+    <div class="login__left-icon">
+      <img src="assets/icons/ic_stars.png" alt="" class="login__left-icon-img">
+      <div class="login__left-icon-text">
+        <p class="login__left-icon-text-content">Notificaciones en tiempo</p>
+        <p class="login__left-icon-text-subContent">Recibi notificaciones en tiempo real sobre las mediciones</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="login__right">
+
+    <div class="login__right-content">
+      <h2 class="login__right-title">Portal de monitoreo</h2>
+      <h3 class="login__right-subtitle">Iiniciar sesión</h3>
+      <mat-spinner *ngIf="loading" diameter="50" class="login__right-spinner"></mat-spinner>
+      <form *ngIf="!loading" [formGroup]="myForm" class="login__right-form" (ngSubmit)="ingresar()">
+        <mat-form-field class="login__right-form-matFormField">
+          <input formControlName="email" matInput type="email" placeholder="Email"
+            class="login__right-form-matFormField-matLabel-input">
+          <mat-error *ngIf="myForm.get('email')?.hasError('required')"
+            class="login__right-form-matFormField-matLabel-error">Este campo es obligatorio</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="login__right-form-matFormField">
+          <input formControlName="password" matInput [type]="showPassword ? 'text' : 'password'"
+            placeholder="Contraseña" required class="login__right-form-matFormField-matLabel-input">
+          <mat-icon matSuffix (click)="visibility()" class="login__right-form-matFormField-visibility">
+            {{showPassword?'visibility_off':'visibility'}}
+          </mat-icon>
+          <mat-error *ngIf="myForm.get('password')?.hasError('required')"
+            class="login__right-form-matFormField-matLabel-error">Este campo es obligatorio</mat-error>
+        </mat-form-field>
+
+        <div class="login__right-form-button">
+          <p class="login__right-form-button-text">¿Olvidaste tu contraseña?</p>
+          <button class="login__right-form-button-star" type="submit">Iniciar sesión</button>
+        </div>
+      </form>
+
+      <div class="login__right-footer">
+        <p class="login__right-footer-text">Protegido por reCAPTCHA y sujeto a la <samp
+            class="login__right-footer-text-color">Política de Privacidad</samp> y <samp
+            class="login__right-footer-text-color">Condiciones.</samp></p>
+      </div>
+    </div>
+  </div>
+
+</section>
