@@ -1,1 +1,28 @@
-<p>footer works!</p>
+<section class="footer">
+    <div *ngFor="let item of sensors" class="footer__content">
+  
+      <div class="footer__content-left">
+        <p class="footer__content-left-title">{{item.name}}</p>
+  
+        <div class="footer__content-left-icons">
+            <div class="footer__content-left-icons-center">
+              <img src="assets/icons/{{item.icon}}.png" alt="{{item.name}}" class="footer__content-left-icons-center-img">
+              <p class="footer__content-left-icons-center-number">{{item.iconNumber}}</p>
+            </div>
+  
+            <div class="footer__content-left-icons-center">
+              <img src="assets/icons/{{item.icon}}.png" alt="{{item.name}}" class="footer__content-left-icons-center-img">
+              <p class="footer__content-left-icons-center-number">{{item.iconNumber}}</p>
+            </div>
+  
+            <div class="footer__content-left-icons-center">
+              <img src="assets/icons/{{item.icon}}.png" alt="{{item.name}}" class="footer__content-left-icons-center-img">
+              <p class="footer__content-left-icons-center-number">{{item.iconNumber}}</p>
+            </div>
+        </div>
+  
+      </div>
+      <img src="assets/icons/{{item.icon}}.png" alt="{{item.name}}" class="footer__content-image">
+    </div>
+  </section>
+  

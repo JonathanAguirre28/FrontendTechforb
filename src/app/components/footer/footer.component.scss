@@ -1,0 +1,55 @@
+@import "src/variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    gap: 56px;
+    width: 1440px;
+    padding: 15px;
+    &__content {
+        width: 278px;
+        height: 110px;
+        border-radius: 15px;
+        background-color: $color-cards;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        &-image {
+            padding-right: 10px;
+        }
+        &-left {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 5px;
+            &-title {
+             font-family: 'Inter', sans-serif;
+             color:$color-texto;
+             font-size: 12px;
+             padding: 5px;  
+            }
+            &-icons {
+                display: flex;
+                gap: 25px;
+                padding: 5px;
+                &-center {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    &-img {
+                        width: 14px;
+                        height: 14px;
+                        font-size: 12px;
+                    }
+                    &-number {
+                        font-size: 12px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
