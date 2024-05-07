@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './views/login/login.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { RegisterComponent } from './views/register/register.component';
 
 const routes: Routes = [
   {

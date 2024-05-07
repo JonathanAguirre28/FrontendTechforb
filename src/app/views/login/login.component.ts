@@ -55,4 +55,8 @@ export class LoginComponent implements OnInit{
   visibility(){
     this.showPassword = !this.showPassword;
   }
+
+  onIconClick(): void {
+    this.router.navigate(['/register']);
+  }
 }
