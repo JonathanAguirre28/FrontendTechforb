@@ -1,8 +1,10 @@
 export interface SensorsData {
-
     name: string;
-    iconNumber: string;
-    number: number;
-    icon: string;
-    
+    reading: string;
+    numberReading: number;
+    midLevel: string;
+    numberMid: number;
+    redAlert: string;
+    numberRedAlert: number;
+    icon: string
 }
