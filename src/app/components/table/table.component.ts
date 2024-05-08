@@ -2,6 +2,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { TableService } from 'src/app/services/table.service';
 import { ModalService } from './services/modal.service';
 import { TableData } from './interfaces/table-data';
+import { DataService } from 'src/app/services/data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-table',
@@ -13,16 +15,28 @@ export class TableComponent implements OnInit{
   displayedColumns: string [] = ['pais', 'name', 'lecturas', 'alertasMedias', 'alertasRojas', 'acciones'];
   dataSource: TableData[] = [];
   selectedUserData: TableData | undefined;
-  
+  subscription: Subscription | undefined;
+
   constructor(private tableService: TableService, 
-    private modalService: ModalService,){  }
+    private modalService: ModalService,
+    private dataService: DataService){  }
 
   ngOnInit(): void {
     this.getTableData();
+    this.subscription = this.dataService.getUpdateTableObservable().subscribe(() => {
+      this.update();
+  });
+}
+
+ngOnDestroy() {
+  if (this.subscription) {
+    this.subscription.unsubscribe();
   }
-  
+}
+
   openAddUsers() {
     this.modalService.openAddUsers();
+    
   }
 
   getTableData() {
@@ -42,10 +56,13 @@ export class TableComponent implements OnInit{
     });
   }
 
-  update():void {
-    this.tableService.update(this.dataSource).subscribe(() => { 
-        this.getTableData()
-        console.log("se acualizo")
+  update(): void {
+    this.tableService.getTableData().subscribe(data => {
+      this.dataSource = data;
+      this.tableService.update(this.dataSource).subscribe(() => { 
+        console.log("se actualizó");
       });
+    });
   }
+  
 }

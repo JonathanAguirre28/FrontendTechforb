@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TableService } from 'src/app/services/table.service';
 import { ModalService } from '../../services/modal.service';
 import { TableData } from '../../interfaces/table-data';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-add-users',
@@ -13,11 +14,11 @@ import { TableData } from '../../interfaces/table-data';
 export class AddUsersComponent {
   paises: string [] = ['Argentina','Paraguay','Uruguay','Brasil'];
   form: FormGroup;
-  @Output() update: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private fb: FormBuilder, 
     private tableService: TableService,
-    private modalService: ModalService,){
+    private modalService: ModalService,
+    private dataService: DataService ){
 
     this.form = this.fb.group({
       name: ['', Validators.required],
@@ -37,7 +38,7 @@ export class AddUsersComponent {
     this.tableService.addUsers(plant).subscribe(
       (res) => { 
       this.modalService.closeModal();
-      this.update.emit();
+      this.dataService.onUpdateTable();
       },
       (error) => {console.log(error)}
     )

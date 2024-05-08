@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TableService } from 'src/app/services/table.service';
 import { DIALOG_DATA } from '@angular/cdk/dialog';
 import { TableData } from '../../interfaces/table-data';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-edit-users',
@@ -14,11 +15,11 @@ import { TableData } from '../../interfaces/table-data';
 export class EditUsersComponent {
   form: FormGroup;
   element: any;
-  @Output() update = new EventEmitter<any>();
 
   constructor(private modalService: ModalService,
    private fb: FormBuilder,
    private tableService: TableService,
+   private dataService: DataService,
    @Inject(DIALOG_DATA) public data: TableData){
     console.log("data", data);
 
@@ -44,8 +45,7 @@ export class EditUsersComponent {
     this.tableService.editUser(this.data.id ? this.data.id : 0, plant).subscribe((res) => 
     {
       this.modalService.closeModal();
-      this.update.emit();
-      console.log('Evento update emitido correctamente');
+      this.dataService.onUpdateTable();
     })
    }
 
