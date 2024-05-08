@@ -36,6 +36,7 @@ $FrontendTechforb-theme: mat.define-light-theme((
 /* You can add global styles to this file, and also import other style files */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import "src/variables.scss";
 * {
   margin: 0;
   padding: 0;
@@ -45,4 +46,5 @@ $FrontendTechforb-theme: mat.define-light-theme((
 
 body { 
   margin: 0; 
+  background:$color-primary;
 }
