@@ -1,8 +1,7 @@
-import { Component, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TableService } from 'src/app/services/table.service';
 import { ModalService } from '../../services/modal.service';
-import { TableData } from '../../interfaces/table-data';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({

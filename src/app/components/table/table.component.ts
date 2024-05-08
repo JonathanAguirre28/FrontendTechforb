@@ -60,7 +60,6 @@ ngOnDestroy() {
     this.tableService.getTableData().subscribe(data => {
       this.dataSource = data;
       this.tableService.update(this.dataSource).subscribe(() => { 
-        console.log("se actualizó");
       });
     });
   }

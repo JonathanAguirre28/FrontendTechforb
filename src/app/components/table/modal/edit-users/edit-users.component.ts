@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Inject, EventEmitter, Output } from '@angular/core';
+import { Component, ViewEncapsulation, Inject } from '@angular/core';
 import { ModalService } from '../../services/modal.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TableService } from 'src/app/services/table.service';
