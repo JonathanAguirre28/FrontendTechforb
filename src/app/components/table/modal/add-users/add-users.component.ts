@@ -13,7 +13,7 @@ import { TableData } from '../../interfaces/table-data';
 export class AddUsersComponent {
   paises: string [] = ['Argentina','Paraguay','Uruguay','Brasil'];
   form: FormGroup;
-  @Output() userAdded: EventEmitter<void> = new EventEmitter<void>();
+  @Output() update: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private fb: FormBuilder, 
     private tableService: TableService,
@@ -37,12 +37,11 @@ export class AddUsersComponent {
     this.tableService.addUsers(plant).subscribe(
       (res) => { 
       this.modalService.closeModal();
-      this.userAdded.emit();
+      this.update.emit();
       },
       (error) => {console.log(error)}
     )
   }
-
 
     closeModal(){
       this.modalService.closeModal();

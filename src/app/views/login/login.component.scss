@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 .login {
     display: flex;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-color: $color-login;
     &__left {
@@ -182,12 +182,33 @@
         flex-direction: column;
         gap: .5rem;
         align-items: center;
+        padding: 0 2rem;
         &-content {
             flex: 1 1 100%;
             border-radius: 0;
+            flex-direction: row
+        }
+        &-title {
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        &-form {
+            &-button {
+                &-star {
+                    width: 353px;
+                    height: 52px;
+                }
+                &-text {
+                    display: none;
+                }
+            }
+        }
+        &-footer {
+            &-text {
+                display: none;
+            }
         }
       }
     }
   }
-  
-

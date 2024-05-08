@@ -16,6 +16,10 @@ const routes: Routes = [
      component: LoginComponent
    },
    {
+     path: 'register',
+     component: RegisterComponent
+   },
+   {
      path:'dashboard',
      component:SidenavComponent,
      children: [{

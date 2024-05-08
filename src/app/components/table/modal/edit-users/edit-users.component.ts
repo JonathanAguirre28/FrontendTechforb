@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, Inject } from '@angular/core';
+import { Component, ViewEncapsulation, Inject, EventEmitter, Output } from '@angular/core';
 import { ModalService } from '../../services/modal.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TableService } from 'src/app/services/table.service';
@@ -14,6 +14,7 @@ import { TableData } from '../../interfaces/table-data';
 export class EditUsersComponent {
   form: FormGroup;
   element: any;
+  @Output() update = new EventEmitter<any>();
 
   constructor(private modalService: ModalService,
    private fb: FormBuilder,
@@ -40,9 +41,11 @@ export class EditUsersComponent {
       redAlerts: this.form.get("redAlerts")?.value,
       iconActions: "actions"
     }
-    this.tableService.editarUsuario(this.data.id ? this.data.id : 0, plant).subscribe((res) => 
+    this.tableService.editUser(this.data.id ? this.data.id : 0, plant).subscribe((res) => 
     {
       this.modalService.closeModal();
+      this.update.emit();
+      console.log('Evento update emitido correctamente');
     })
    }
 

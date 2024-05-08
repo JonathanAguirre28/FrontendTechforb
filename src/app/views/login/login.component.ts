@@ -16,19 +16,19 @@ export class LoginComponent implements OnInit{
   showPassword = false;
 
   myForm = new FormGroup({
-    email: new FormControl ('Luciano@email.com', [Validators.required, Validators.email]),
+    email: new FormControl ('Jonathan@gmail.com', [Validators.required, Validators.email]),
     password: new FormControl ('123456', [Validators.required,
       Validators.minLength(6),
-      Validators.maxLength(12),
+      Validators.maxLength(8),
     ])    
   })
   ngOnInit(): void { }
 
-  ingresar() {
+  login() {
     const email = this.myForm.value.email;
     const password = this.myForm.value.password;
 
-    if(email == 'Luciano@email.com' && password == '123456'){
+    if(email == 'Jonathan@gmail.com' && password == '123456'){
       this.fakeLoading();
     }else {
       this.error();

@@ -29,7 +29,7 @@
       <h2 class="login__right-title">Portal de monitoreo</h2>
       <h3 class="login__right-subtitle">Iiniciar sesión</h3>
       <mat-spinner *ngIf="loading" diameter="50" class="login__right-spinner"></mat-spinner>
-      <form *ngIf="!loading" [formGroup]="myForm" class="login__right-form" (ngSubmit)="ingresar()">
+      <form *ngIf="!loading" [formGroup]="myForm" class="login__right-form" (ngSubmit)="login()">
         <mat-form-field class="login__right-form-matFormField">
           <input formControlName="email" matInput type="email" placeholder="Email"
             class="login__right-form-matFormField-matLabel-input">

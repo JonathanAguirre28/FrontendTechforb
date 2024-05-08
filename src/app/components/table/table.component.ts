@@ -25,11 +25,6 @@ export class TableComponent implements OnInit{
     this.modalService.openAddUsers();
   }
 
-  handleUserAdded() {
-    this.getTableData(); 
-    console.log("actualiza", this.handleUserAdded())
-  }
-
   getTableData() {
     this.tableService.getTableData().subscribe(data => {
       this.dataSource = data;
@@ -42,8 +37,15 @@ export class TableComponent implements OnInit{
   }
   
   deleteUsers(id: number): void {
-    this.tableService.eliminarUsuario(id).subscribe(() => {
+    this.tableService.deleteUser(id).subscribe(() => {
       this.dataSource = this.dataSource.filter(user => user.id !== id);
     });
+  }
+
+  update():void {
+    this.tableService.update(this.dataSource).subscribe(() => { 
+        this.getTableData()
+        console.log("se acualizo")
+      });
   }
 }
